@@ -11,9 +11,4 @@ module.exports = app => {
 
     app.route('/api/user')
         .post(validator.body(userValidation.user), errorHandler(user.create));
-
-    app.route('/api/user/:id/book')
-        .post(validator.body(userValidation.book), errorHandler(user.bookAdd))
-        .delete(validator.body(userValidation.book), errorHandler(user.bookDelete));
-
 };
